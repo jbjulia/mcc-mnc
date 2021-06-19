@@ -28,7 +28,6 @@ def main(argv):
         "-mcc:  Mobile Country Code",
         "-mnc:  Mobile Network Code"
     ]
-
     try:
         if argv == "-help":
             print("Please refer to to project repository for documentation:  https://github.com/jbjulia/mcc-mnc/")
@@ -55,17 +54,14 @@ def identify(user_mcc, user_mnc=None):
     :return:
     """
     match_found = False
-
     try:
         with open("data/mcc-mnc.json", "r") as json_file:
             json_data = json.load(json_file)
-
         if not user_mnc:
             for country in json_data.keys():
                 if user_mcc in json_data[country]["MCC"]:
                     match_found = True
                     print(f"Match found:  MCC [{user_mcc}] exists in {country}")
-
         else:
             for country in json_data.keys():
                 if user_mcc in json_data[country]["MCC"] and user_mnc in json_data[country]["MNC"]:
@@ -73,7 +69,6 @@ def identify(user_mcc, user_mnc=None):
                     print(f"Match found:  MCC [{user_mcc}] and MNC [{user_mnc}] exists in {country.split('-')[0]}\n")
                     for key, val in json_data[country].items():
                         print(f"{key}: {val}")
-
         if not match_found:
             print("No match found.")
     except(IndexError, KeyError, ValueError) as e:
