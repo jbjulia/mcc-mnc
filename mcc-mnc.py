@@ -5,7 +5,7 @@ belongs to. To uniquely identify a mobile subscriber's network provider
 the MCC is combined with a Mobile Network Code (MNC). The combination
 of MCC and MNC is called the Home Network Identity (HNI), and is the
 concatenation of both strings (e.g. MCC = 262 and MNC = 01 results in
-an HNI of 26201). Combining the HNI with the MSIN (Mobile Subscriber
+an HNI of 26201). Combining the HNI with the MSIN (Mobile Subscription
 Identification Number) results in the International Mobile Subscriber
 Identity (IMSI), from which a subscriber can be further identified.
 """
