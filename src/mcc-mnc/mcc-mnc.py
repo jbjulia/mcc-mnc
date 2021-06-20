@@ -161,7 +161,7 @@ def ingest_csv():
         if os.path.exists("mcc-mnc.json"):
             print(f"Removing old JSON {'mcc-mnc.json'}.")
             os.remove("mcc-mnc.json")
-        print(f"Creating new JSON {'mcc-mnc.csv'}.")
+        print(f"Creating new JSON {'mcc-mnc.json'}.")
         f = open("mcc-mnc.json", "w+")
         print(f"Writing empty JSON dictionary to {'mcc-mnc.json'}.")
         f.write("{}\r\n")
