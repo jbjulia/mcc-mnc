@@ -147,29 +147,29 @@ def ingest_csv():
         with urllib.request.urlopen(
                 "https://raw.githubusercontent.com/jbjulia/mcc-mnc/master/src/mcc-mnc/mcc-mnc.csv"
         ) as raw:
-            print(f"Decoding raw CSV {'src/mcc-mnc/mcc-mnc.csv'}.")
+            print(f"Decoding raw CSV {'mcc-mnc.csv'}.")
             data = raw.read().decode("utf-8")
-        if os.path.exists("src/mcc-mnc/mcc-mnc.csv"):
-            print(f"Removing old CSV {'src/mcc-mnc/mcc-mnc.csv'}.")
-            os.remove("src/mcc-mnc/mcc-mnc.csv")
-        print(f"Creating new CSV {'src/mcc-mnc/mcc-mnc.csv'}.")
-        f = open("src/mcc-mnc/mcc-mnc.csv", "w+")
-        print(f"Writing CSV data to {'src/mcc-mnc/mcc-mnc.csv'}.")
+        if os.path.exists("mcc-mnc.csv"):
+            print(f"Removing old CSV {'mcc-mnc.csv'}.")
+            os.remove("mcc-mnc.csv")
+        print(f"Creating new CSV {'mcc-mnc.csv'}.")
+        f = open("mcc-mnc.csv", "w+")
+        print(f"Writing CSV data to {'mcc-mnc.csv'}.")
         f.write(f"{data}")
-        print(f"Closing {'src/mcc-mnc/mcc-mnc.csv'}.")
+        print(f"Closing {'mcc-mnc.csv'}.")
         f.close()
-        if os.path.exists("src/mcc-mnc/mcc-mnc.json"):
-            print(f"Removing old JSON {'src/mcc-mnc/mcc-mnc.json'}.")
-            os.remove("src/mcc-mnc/mcc-mnc.json")
-        print(f"Creating new JSON {'src/mcc-mnc/mcc-mnc.csv'}.")
-        f = open("src/mcc-mnc/mcc-mnc.json", "w+")
-        print(f"Writing empty JSON dictionary to {'src/mcc-mnc/mcc-mnc.json'}.")
+        if os.path.exists("mcc-mnc.json"):
+            print(f"Removing old JSON {'mcc-mnc.json'}.")
+            os.remove("mcc-mnc.json")
+        print(f"Creating new JSON {'mcc-mnc.csv'}.")
+        f = open("mcc-mnc.json", "w+")
+        print(f"Writing empty JSON dictionary to {'mcc-mnc.json'}.")
         f.write("{}\r\n")
-        print(f"Closing {'src/mcc-mnc/mcc-mnc.json'}.")
+        print(f"Closing {'mcc-mnc.json'}.")
         f.close()
-        with open("src/mcc-mnc/mcc-mnc.json", "r") as json_file:
+        with open("mcc-mnc.json", "r") as json_file:
             json_data = json.load(json_file)
-        with open("src/mcc-mnc/mcc-mnc.csv", "r") as csv_file:
+        with open("mcc-mnc.csv", "r") as csv_file:
             for line in csv.reader(csv_file):
                 if line[3] in json_data.keys():
                     json_data.update(
@@ -195,9 +195,9 @@ def ingest_csv():
                             }
                         }
                     )
-        with open("src/mcc-mnc/mcc-mnc.json", "w") as out_file:
+        with open("mcc-mnc.json", "w") as out_file:
             json.dump(json_data, out_file, indent=4, sort_keys=True)
-            print(f"\nSuccessfully updated JSON file: {os.path.getsize('src/mcc-mnc/mcc-mnc.json')} bytes.")
+            print(f"\nSuccessfully updated JSON file: {os.path.getsize('mcc-mnc.json')} bytes.")
     except OSError as e:
         print(f"Error: Please try again as Administrator: {e}")
         sys.exit(1)
