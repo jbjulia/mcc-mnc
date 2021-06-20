@@ -19,10 +19,10 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-> python mcc-mnc.py -cc X/XX # Returns countries matching Country Code (CC)
+> python mcc-mnc.py -cc X/XX/XXX # Returns countries matching Country Code (CC)
 > python mcc-mnc.py -mcc XXX # Returns countries matching Mobile Country Code (MCC)
 > python mcc-mnc.py -mcc XXX -mnc XX/XXX # Returns country matching Mobile Country Code (MCC) and Mobile Network Code (MNC)
-> python mcc-mnc.py -cc X/XX -mcc XXX -mnc XX/XXX # Returns country matching Country Code (CC), Mobile Country Code (MCC) and Mobile Network Code (MNC)
+> python mcc-mnc.py -cc X/XX/XXX -mcc XXX -mnc XX/XXX # Returns country matching Country Code (CC), Mobile Country Code (MCC) and Mobile Network Code (MNC)
 
 # Updating MCC-MNC
 > python mcc-mnc.py -update # Downloads and refreshes local CSV and JSON

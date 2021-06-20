@@ -28,13 +28,13 @@ def main(argv):
     :return:
     """
     arg_list = [
-        "-cc ##:  Returns countries matching Country Code (CC) "
+        "-cc X/XX/XXX:  Returns countries matching Country Code (CC) "
         "(e.g. -cc 93)",
-        "-mcc ###:  Returns countries matching Mobile Country Code (MCC) "
+        "-mcc XXX:  Returns countries matching Mobile Country Code (MCC) "
         "(e.g. -mcc 412)",
-        "-mcc ### -mnc ##:  Returns country matching Mobile Country Code (MCC) and Mobile Network Code (MNC) "
+        "-mcc XXX -mnc XX/XXX:  Returns country matching Mobile Country Code (MCC) and Mobile Network Code (MNC) "
         "(e.g. -mcc 412 -mnc 88)",
-        "-cc ## -mcc ### -mnc ##:  "
+        "-cc X/XX/XXX -mcc XXX -mnc XX/XXX:  "
         "Returns country matching Country Code (CC), Mobile Country Code (MCC) and Mobile Network Code (MNC) "
         "(e.g. -cc 93 -mcc 412 -mnc 88)",
         "-update:  Downloads and refreshes local CSV and JSON"
@@ -42,7 +42,7 @@ def main(argv):
     try:
         if argv == "-help":
             print("Please refer to the project repository for documentation:  https://github.com/jbjulia/mcc-mnc/")
-        if argv.lower() == "-update":
+        if argv[0].lower() == "-update":
             ingest_csv()
         elif argv[0].lower() == "-cc" and len(argv) < 3:
             identify(user_cc=argv[1])  # User's desired CC
