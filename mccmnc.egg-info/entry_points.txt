@@ -1,0 +1,2 @@
+[console_scripts]
+mccmnc = mccmnc.cli:main

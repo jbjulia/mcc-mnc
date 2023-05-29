@@ -1,0 +1,12 @@
+LICENSE
+README.md
+setup.py
+mccmnc/__init__.py
+mccmnc/cli.py
+mccmnc/mccmnc.py
+mccmnc.egg-info/PKG-INFO
+mccmnc.egg-info/SOURCES.txt
+mccmnc.egg-info/dependency_links.txt
+mccmnc.egg-info/entry_points.txt
+mccmnc.egg-info/requires.txt
+mccmnc.egg-info/top_level.txt

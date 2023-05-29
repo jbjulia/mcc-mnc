@@ -1,3 +1,17 @@
+Metadata-Version: 2.1
+Name: mccmnc
+Version: 3.2
+Summary: A tool for matching and retrieving information about MCC-MNC combinations.
+Home-page: https://github.com/jbjulia/mcc-mnc
+Author: Joseph Julian
+Author-email: jbjulian@pm.me
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
 # mcc-mnc
 
 mcc-mnc is a tool for matching and retrieving information about Mobile Country Codes (MCC) and Mobile Network Codes (

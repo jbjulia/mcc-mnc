@@ -1,4 +1,3 @@
-import argparse
 import json
 import os
 import sys
@@ -10,19 +9,6 @@ from tqdm import tqdm
 
 MCC_MNC_URL = "https://www.mcc-mnc.com/"
 JSON_PATH = os.path.join(os.path.dirname(__file__), "mccmnc.json")
-
-
-def get_args():
-    """
-    Parse command-line arguments.
-    """
-    parser = argparse.ArgumentParser(description='MCC-MNC match and update tool.')
-    parser.add_argument('-cc', metavar='CC', type=str, help='Country Code (CC)')
-    parser.add_argument('-mcc', metavar='MCC', type=str, help='Mobile Country Code (MCC)')
-    parser.add_argument('-mnc', metavar='MNC', type=str, help='Mobile Network Code (MNC)')
-    parser.add_argument('-plmn', metavar='PLMN', type=str, help='Public Land Mobile Network (PLMN)')
-    parser.add_argument('-update', action='store_true', help='Downloads and refreshes local CSV and JSON')
-    return parser.parse_args()
 
 
 def find_matches(user_cc=None, user_mcc=None, user_mnc=None, user_plmn=None):
@@ -117,27 +103,3 @@ def update():
     except URLError as e:
         print(f"Error downloading file: {e}")
         sys.exit(1)
-
-
-def main(args):
-    """
-    Main entry point of the program.
-
-    :param args: Command-line arguments
-    """
-    try:
-        if args.update:
-            update()
-        else:
-            matches = find_matches(args.cc, args.mcc, args.mnc, args.plmn)
-            if matches:
-                print_matches(matches)
-            else:
-                print("No match found.")
-    except Exception as e:
-        print(f"Error: {e}")
-        sys.exit(1)
-
-
-if __name__ == "__main__":
-    main(get_args())
