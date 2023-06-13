@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="mccmnc",
-    version="3.2",
+    version="3.3",
     author="Joseph Julian",
     author_email="jbjulian@pm.me",
     description="A tool for matching and retrieving information about MCC-MNC combinations.",
@@ -14,11 +14,11 @@ setup(
     url="https://github.com/jbjulia/mcc-mnc",
     packages=find_packages(),
     include_package_data=True,
-    python_requires='>=3.6',
+    python_requires=">=3.6",
     install_requires=["beautifulsoup4", "tqdm"],
     entry_points={
-        'console_scripts': [
-            'mccmnc=mccmnc.cli:main',
+        "console_scripts": [
+            "mccmnc=mccmnc.cli:main",
         ],
     },
     classifiers=[
